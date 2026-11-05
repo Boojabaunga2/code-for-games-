@@ -1,7 +1,11 @@
-# Barrel Bash V1 — download withdrawn
+# Barrel Bash V2 / installer revision
 
-The recipient reported an antivirus alert for this build. The ZIP has been removed from this branch pending investigation. Do not restore quarantined copies, disable protection, or add exclusions.
+Extract the complete V2 ZIP, run START_INSTALL.cmd, select the existing Arcadium_OS_COMPACT folder, and restart Windows once. Requires the normal installed Python launcher (py), Python 3.9+ and Tkinter. No new APK.
 
-The prior Windows build-runner scan did not reproduce the recipient alert; it does not establish a false positive. The threat name and affected item are needed to investigate the detection.
+V2 removes interpreter discovery, inline preflight commands and dynamic code compilation. It adds a standard adapter registration without rewriting the existing bridge function. Original game/controls/art bytes remain unchanged; earlier game handlers, Home and pairing are preserved.
 
-Withdrawn SHA-256: 133911fcdbd063a6275d9de19c6d423502b21f44213f9f26e91deaac45c5b8fc
+V1 was withdrawn after the recipient reported an antivirus alert. Prior Windows runner scans did not reproduce that alert. Independent signature, script-member Defender and Internet attachment checks do not establish a false positive, guarantee client acceptance or constitute a manual Microsoft verdict. Leave any blocked copy blocked; do not disable protection or add exclusions.
+
+V2 SHA-256: d647e7f36ce34cee8014638c62be4657447d05ca94af62d95e46620467328669
+
+Withdrawn V1 SHA-256: 133911fcdbd063a6275d9de19c6d423502b21f44213f9f26e91deaac45c5b8fc
