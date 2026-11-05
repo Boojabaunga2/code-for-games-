@@ -1,7 +1,7 @@
-# Dirty Deeds: The Numbers Racket
+# Dirty Deeds download withdrawn
 
-Complete Arcadium Windows overhaul. Extract the ZIP, double-click START_INSTALL.cmd, select Arcadium_OS_COMPACT, restart Windows once. Existing Python/Tk and shared Mini Vibe app required. No new APK or separate relay.
+The V1 archive has been withdrawn after the recipient reported an antivirus detection. Do not restore or allow a blocked download.
 
-New widescreen crime dashboard, physical Poker Chimp ledger, six private dice/plan/target/getaway screens and Ghost Boss powers. Physical D10 and Roshambo/decision-coin play preserved. Human results are explicitly entered, not generated.
+The same archive and extracted files passed a separate enabled Microsoft Defender Windows runner scan. That result does not resolve the recipient detection, identify its cause, or establish a false positive. No verified replacement is published.
 
-Original rules and chip conservation tests, six-screen five-round browser playthrough, installer/rollback, Windows launcher and Defender archive/extracted scans passed. Real-device and LAN acceptance still needed; do not override local antivirus blocks.
+Original SHA-256: 82afca4d6320804387f8397814664664ff6b80150c9f6a39e59ecb37c0c6a619
