@@ -1,7 +1,7 @@
-# Bad Influence download withdrawn
+# Bad Influence V2 — existing-Python setup
 
-The V1 ZIP has been withdrawn following Windows Defender Trojan detections on the recipient PC. Do not restore or allow the blocked download.
+V1 was withdrawn after recipient Windows Defender detections. V2 removes automatic Python downloading/installing and excludes development tools from the distribution. The game, original GoDice libraries and shared Mini Vibe input are unchanged.
 
-The exact archive and extracted files passed a separate Microsoft Defender Windows runner scan, but that does not resolve the recipient detection. No false-positive determination or verified replacement is available.
+Extract the complete ZIP, run START_INSTALL.cmd, select Arcadium_OS_COMPACT, then restart Windows once. Existing Python/Tk is required. No new APK.
 
-Original SHA-256: 86b46d2486b16cc059fcc5fc656a04a479d415458c0aee326d42df98a8deb860
+The Windows runner checks the exact V2 archive and extracted files with enabled Microsoft Defender. A runner scan does not guarantee acceptance on another computer. The V1 detection cause remains unresolved: do not disable Defender or allow a blocked file.
