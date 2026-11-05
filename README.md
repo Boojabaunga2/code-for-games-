@@ -1,7 +1,9 @@
-# Dirty Deeds download withdrawn
+# Dirty Deeds V2 — revised installer
 
-The V1 archive has been withdrawn after the recipient reported an antivirus detection. Do not restore or allow a blocked download.
+Complete Arcadium Windows game build. Extract the whole ZIP, run START_INSTALL.cmd, select Arcadium_OS_COMPACT, restart Windows once. Uses the current shared Mini Vibe app: no new APK. Existing Python/Tk required.
 
-The same archive and extracted files passed a separate enabled Microsoft Defender Windows runner scan. That result does not resolve the recipient detection, identify its cause, or establish a false positive. No verified replacement is published.
+V2 replaces the previous install-directory searching/probing with normal command-line Python/Python launcher resolution. Game rules, art, six private Mini Vibe screens and shared controller behavior remain intact.
 
-Original SHA-256: 82afca4d6320804387f8397814664664ff6b80150c9f6a39e59ecb37c0c6a619
+V1 remains withdrawn following recipient Wacatac/Sabisk-family alerts. Its initial scanner assurance was insufficient because hosted-runner protections were disabled by default. The revised validation explicitly verifies real-time, script, archive, downloaded-file, first-seen and cloud protection; validates cloud connectivity; scans archive and extracted files; and tests Windows attachment Save without executing game code. A harmless separate antivirus positive control verifies detection. That control is never included in this ZIP.
+
+The recipient alert has not been reproduced or ruled a false positive by Microsoft. A successful Windows Server test is not a guarantee for another PC. Keep Defender enabled and leave any blocked file blocked. No manual Microsoft false-positive review verdict is claimed.
