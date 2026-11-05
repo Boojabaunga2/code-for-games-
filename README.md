@@ -1,9 +1,7 @@
-# Arcadium Barrel Bash / Shared Mini Vibe V1
+# Barrel Bash V1 — download withdrawn
 
-Complete Windows update. Extract the whole ZIP, double-click START_INSTALL.cmd, select your existing Arcadium_OS_COMPACT folder, and restart Windows once.
+The recipient reported an antivirus alert for this build. The ZIP has been removed from this branch pending investigation. Do not restore quarantined copies, disable protection, or add exclusions.
 
-Six-player spinning-target showdown with actual personal targets/crosshairs, scores, timers and touch controls on Mini Vibes. Shared controller app; no new APK. Original artwork and five-round scoring retained. Source/tests stay in the private Arcadium repository.
+The prior Windows build-runner scan did not reproduce the recipient alert; it does not establish a false positive. The threat name and affected item are needed to investigate the detection.
 
-SHA-256: 133911fcdbd063a6275d9de19c6d423502b21f44213f9f26e91deaac45c5b8fc
-
-Keep Windows protection enabled. A successful validation scan is not a guarantee. Do not override a blocked download.
+Withdrawn SHA-256: 133911fcdbd063a6275d9de19c6d423502b21f44213f9f26e91deaac45c5b8fc
