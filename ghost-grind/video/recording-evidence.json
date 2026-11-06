@@ -1,0 +1,58 @@
+{
+  "capture": "Unmodified browser game, actual Java host, automated six-phone inputs; normal-speed full first round, natural elimination and round-two ghost mode. No state fixtures or timer acceleration.",
+  "round": 2,
+  "history": [
+    {
+      "round": 1,
+      "loser": 5,
+      "tied": false,
+      "tiebreak": "Lowest landed score",
+      "scores": [
+        12800,
+        8423,
+        9025,
+        8643,
+        10213,
+        0
+      ]
+    }
+  ],
+  "players": [
+    {
+      "name": "RED",
+      "alive": true,
+      "haunts": 0,
+      "score": 2058
+    },
+    {
+      "name": "BLUE",
+      "alive": true,
+      "haunts": 0,
+      "score": 1374
+    },
+    {
+      "name": "GREEN",
+      "alive": true,
+      "haunts": 0,
+      "score": 400
+    },
+    {
+      "name": "YELLOW",
+      "alive": true,
+      "haunts": 0,
+      "score": 1448
+    },
+    {
+      "name": "PINK",
+      "alive": true,
+      "haunts": 0,
+      "score": 1250
+    },
+    {
+      "name": "WHITE",
+      "alive": false,
+      "haunts": 2,
+      "score": 0
+    }
+  ]
+}
