@@ -1,0 +1,58 @@
+{
+  "capture": "Shared half-pipe rebuild, actual Java host, automated six-phone inputs; normal-speed full first round, natural elimination and round-two ghost mode. No state fixtures or timer acceleration.",
+  "round": 2,
+  "history": [
+    {
+      "round": 1,
+      "loser": 0,
+      "tied": true,
+      "tiebreak": "Best combo, landed combos, previous total, then announced rotation",
+      "scores": [
+        527,
+        22272,
+        527,
+        22488,
+        17918,
+        6336
+      ]
+    }
+  ],
+  "players": [
+    {
+      "name": "RED",
+      "alive": false,
+      "haunts": 0,
+      "score": 0
+    },
+    {
+      "name": "BLUE",
+      "alive": true,
+      "haunts": 0,
+      "score": 820
+    },
+    {
+      "name": "GREEN",
+      "alive": true,
+      "haunts": 0,
+      "score": 527
+    },
+    {
+      "name": "YELLOW",
+      "alive": true,
+      "haunts": 0,
+      "score": 2987
+    },
+    {
+      "name": "PINK",
+      "alive": true,
+      "haunts": 0,
+      "score": 2108
+    },
+    {
+      "name": "WHITE",
+      "alive": true,
+      "haunts": 0,
+      "score": 880
+    }
+  ]
+}
