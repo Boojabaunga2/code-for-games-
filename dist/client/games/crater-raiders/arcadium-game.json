@@ -1,0 +1,17 @@
+{
+  "id": "crater-raiders",
+  "name": "Crater Raiders",
+  "tagline": "Crater Raiders for Arcadium",
+  "description": "Crater Raiders — original Arcadium HTML game.",
+  "players": "1–6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/crater-raiders.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/crater-raiders/index.html",
+  "controls": "Original game controls; Mini Vibe operation not verified",
+  "tournament": true,
+  "gameType": "html"
+}

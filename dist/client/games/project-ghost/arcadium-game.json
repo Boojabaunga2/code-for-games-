@@ -1,0 +1,17 @@
+{
+  "id": "project-ghost",
+  "name": "PROJECT GHOST: ZERO TRUST",
+  "tagline": "Six hackers. One vault. Trust nobody.",
+  "description": "The original six-player codecracking competition rebuilt with animated heist rooms, original hackers and ghost codes 81/82/83.",
+  "players": "1–6",
+  "time": "5–15 min",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/arcadium-art-project-ghost-20261017_182733.png",
+  "featured": true,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/project-ghost/index.html",
+  "controls": "USB ten-key / touch keypad / Mini Vibe relay (8786)",
+  "tournament": true,
+  "gameType": "html"
+}

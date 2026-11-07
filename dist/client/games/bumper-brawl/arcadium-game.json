@@ -1,0 +1,17 @@
+{
+  "id": "bumper-brawl",
+  "name": "Bumper Brawl",
+  "tagline": "Six-player bumper-car battle \u00b7 feel every hit",
+  "description": "Five rounds of bumper-car mayhem, six Mini Vibes, 60-second rounds, collision feedback.",
+  "players": "2\u20136",
+  "time": "5 \u00d7 60 seconds",
+  "category": "Arcade",
+  "image": "assets/games_mockup.png",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/bb/table",
+  "controls": "Six Mini Vibes; collision vibration when supported",
+  "tournament": true,
+  "gameType": "html"
+}

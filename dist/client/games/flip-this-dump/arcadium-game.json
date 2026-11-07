@@ -1,0 +1,17 @@
+{
+  "id": "flip-this-dump",
+  "name": "Flip This Dump",
+  "tagline": "Six crews. One haunted jobsite.",
+  "description": "Six crews. One haunted jobsite. Arcadium Vibe-ready game with game-specific ghost action.",
+  "players": "6",
+  "time": "5 min",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/arcadium-art-flip-this-dump-20261017_182733.png",
+  "featured": true,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/flip-this-dump/index.html",
+  "controls": "Six Mini Vibes, game-specific ghost power X",
+  "tournament": true,
+  "gameType": "html"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "worm-wheelers-trykes",
+  "name": "Worm Wheelers: Trykes",
+  "tagline": "Six racers. Five tracks. Ghost Racer sabotage.",
+  "description": "Six racers. Five tracks. Ghost Racer sabotage.",
+  "players": "6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/arcadium-art-worm-wheelers-trykes-20261017_182733.png",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/worm-wheelers-trykes/index.html",
+  "controls": "Use the in-game six-player controller mappings",
+  "tournament": true,
+  "gameType": "html"
+}

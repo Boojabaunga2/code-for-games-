@@ -1,0 +1,17 @@
+{
+  "id": "pinball-pandemonium",
+  "name": "Pinball Pandemonium",
+  "tagline": "Pinball Pandemonium for Arcadium",
+  "description": "Pinball Pandemonium — original Arcadium HTML game.",
+  "players": "1–6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/pinball-pandemonium.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/pinball-pandemonium/index.html",
+  "controls": "Original game controls; Mini Vibe operation not verified",
+  "tournament": true,
+  "gameType": "html"
+}

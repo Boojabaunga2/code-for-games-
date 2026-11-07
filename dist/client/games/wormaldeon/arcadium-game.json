@@ -1,0 +1,17 @@
+{
+  "id": "wormaldeon",
+  "name": "Wormaldeon",
+  "tagline": "Six-player 3v3 worm tennis.",
+  "description": "Six-player 3v3 worm tennis.",
+  "players": "6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/wormaldeon.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/wormaldeon/index.html",
+  "controls": "Use the in-game six-player controller mappings",
+  "tournament": true,
+  "gameType": "html"
+}

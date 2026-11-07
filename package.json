@@ -1,0 +1,20 @@
+{
+  "name": "arcadium-home-vibe-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/rooms.test.mjs && node tests/bridge.test.mjs && node tests/worker.test.mjs",
+    "build": "node tools/build.mjs",
+    "start": "node src/node-server.mjs"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "qrcode-generator": "2.0.4"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}

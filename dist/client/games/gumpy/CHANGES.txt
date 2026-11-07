@@ -1,0 +1,9 @@
+GUMPY Arcadium update
+- Supplied Arcadium logo on big screen and Multi-Vibe splash.
+- Increased normal call window to 8.0 seconds.
+- Turbo mode is off by default; accelerated calls no longer surprise players.
+- Updated handheld progress countdown to match 8.0 seconds.
+- Improved host title/lobby panel contrast.
+- Preserved all character sheets, powers, five rounds and networking.
+
+NEW: Redesigned the in-game number call stage in native-resolution canvas vectors. Removed blurry enlarged tiny art from primary call panel, with sharp oversized letter and number, polished category framing, readable character name and joke. Preserves 8-second pacing and logic.

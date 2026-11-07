@@ -1,0 +1,17 @@
+{
+  "id": "baglords-and-bandits",
+  "name": "Baglords & Bandits",
+  "tagline": "Baglords & Bandits for Arcadium",
+  "description": "Baglords & Bandits — original Arcadium HTML game.",
+  "players": "1–6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/baglords-and-bandits.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/baglords-and-bandits/index.html",
+  "controls": "Original game controls; Mini Vibe operation not verified",
+  "tournament": true,
+  "gameType": "html"
+}

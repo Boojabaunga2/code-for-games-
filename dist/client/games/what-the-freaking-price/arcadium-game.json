@@ -1,0 +1,17 @@
+{
+  "id": "what-the-freaking-price",
+  "name": "What The Freaking Price?!",
+  "tagline": "What The Freaking Price?! for Arcadium",
+  "description": "What The Freaking Price?! — original Arcadium HTML game.",
+  "players": "1–6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/arcadium-art-what-the-freaking-price-20261017_182733.png",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/what-the-freaking-price/index.html",
+  "controls": "Original game controls; Mini Vibe operation not verified",
+  "tournament": true,
+  "gameType": "html"
+}

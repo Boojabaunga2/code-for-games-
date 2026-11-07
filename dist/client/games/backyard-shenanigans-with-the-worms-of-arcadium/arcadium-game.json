@@ -1,0 +1,17 @@
+{
+  "id": "backyard-shenanigans-with-the-worms-of-arcadium",
+  "name": "Backyard Shenanigans with the Worms of Arcadium",
+  "tagline": "Imported HTML game",
+  "description": "Imported into Arcadium OS. Edit this game in Admin to add description, art, controls, and tournament settings.",
+  "players": "2–6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/backyard-shenanigans.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/backyard-shenanigans-with-the-worms-of-arcadium/index.html",
+  "controls": "",
+  "tournament": true,
+  "gameType": "html"
+}

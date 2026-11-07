@@ -1,0 +1,16 @@
+{
+  "id": "gumpy",
+  "title": "GUMPY",
+  "description": "Arcadium Bingo Gone Bananas — 75 characters, five rounds and ghost powers. Eight-second calls.",
+  "players": "2–6",
+  "time": "",
+  "category": "Party",
+  "image": "/games/gumpy/card.png",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/gp/table",
+  "controls": "Mini Vibes (requires GUMPY relay integration)",
+  "tournament": true,
+  "gameType": "html"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "dirty-deeds",
+  "name": "DIRTY DEEDS: THE NUMBERS RACKET",
+  "tagline": "Steal crew. Betray gangs. Become a Ghost Boss.",
+  "description": "Six-player tabletop heist with physical D10 dice, Poker Chimps, secret controller decisions and Ghost Boss powers.",
+  "players": "3–6",
+  "time": "15–25 min",
+  "category": "Tabletop",
+  "image": "assets/carousel-cards/dirty-deeds.png",
+  "featured": true,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/dirty-deeds/index.html",
+  "controls": "Six private Mini Vibe browser pages / physical dice",
+  "tournament": true,
+  "gameType": "html"
+}

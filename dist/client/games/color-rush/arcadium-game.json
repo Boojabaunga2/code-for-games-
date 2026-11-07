@@ -1,0 +1,17 @@
+{
+  "id": "color-rush",
+  "name": "Color Rush",
+  "tagline": "Color Rush for Arcadium",
+  "description": "Color Rush — original Arcadium HTML game.",
+  "players": "1–6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/color-rush.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/color-rush/index.html",
+  "controls": "Original game controls; Mini Vibe operation not verified",
+  "tournament": true,
+  "gameType": "html"
+}

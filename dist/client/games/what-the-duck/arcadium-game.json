@@ -1,0 +1,17 @@
+{
+  "id": "what-the-duck",
+  "name": "WHAT THE DUCK?!",
+  "title": "WHAT THE DUCK?!",
+  "tagline": "The ultimate dice game show",
+  "description": "Six-player Arcadium dice game show with GoDice and Mini Vibes",
+  "players": "1\u20136",
+  "category": "Party",
+  "image": "assets/games_mockup.png",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/wtd/launch",
+  "controls": "GoDice + Mini Vibes",
+  "tournament": true,
+  "gameType": "html"
+}

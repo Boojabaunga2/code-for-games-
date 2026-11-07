@@ -1,0 +1,17 @@
+{
+  "id": "cave-money-unga-boonga",
+  "name": "CAVE MONEY - UNGA BOONGA",
+  "tagline": "Imported HTML game",
+  "description": "Imported into Arcadium OS. Edit this game in Admin to add description, art, controls, and tournament settings.",
+  "players": "2\u20136",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/games_mockup.png",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/cave-money-unga-boonga/index.html",
+  "controls": "",
+  "tournament": true,
+  "gameType": "html"
+}

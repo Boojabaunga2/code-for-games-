@@ -1,0 +1,17 @@
+{
+  "id": "backyard-shenanigans",
+  "name": "Backyard Shenanigans",
+  "tagline": "Six-player worm mayhem. Eliminated worms return as ghosts.",
+  "description": "Six-player worm mayhem. Eliminated worms return as ghosts.",
+  "players": "6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/backyard-shenanigans.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/backyard-shenanigans/index.html",
+  "controls": "Use the in-game six-player controller mappings",
+  "tournament": true,
+  "gameType": "html"
+}

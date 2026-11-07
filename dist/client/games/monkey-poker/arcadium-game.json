@@ -1,0 +1,16 @@
+{
+  "id": "monkey-poker",
+  "name": "MONKEY POKER",
+  "tagline": "Three cards. Six chimps. Sabotage.",
+  "description": "Six-player private-hand poker with ghost sabotage.",
+  "players": "2–6",
+  "time": "10–20 min",
+  "category": "Tabletop",
+  "image": "/games/monkey-poker/monkey_poker_card.png",
+  "active": true,
+  "featured": false,
+  "launchType": "html",
+  "launchUrl": "/games/monkey-poker/index.html",
+  "controls": "Mini Vibe private cards",
+  "cover": "/games/monkey-poker/monkey_poker_card.png"
+}

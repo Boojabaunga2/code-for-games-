@@ -1,0 +1,11 @@
+{
+  "id": "escape-3-monkey-island",
+  "title": "Escape from 3 Monkey Island",
+  "launchUrl": "/games/escape-3-monkey-island/index.html",
+  "description": "Six-player jungle swinging and jumping timing game. Five rounds.",
+  "cover": "/games/escape-3-monkey-island/cover.png",
+  "name": "Escape from 3 Monkey Island",
+  "image": "/games/escape-3-monkey-island/cover.png?escape=v6",
+  "gameType": "html",
+  "active": true
+}

@@ -1,0 +1,20 @@
+{
+  "id": "anti-gravity-brothers",
+  "name": "ANTI-GRAVITY BROTHERS",
+  "title": "ANTI-GRAVITY BROTHERS",
+  "description": "Six colorful brothers. Solo juggling, timing, and anti-gravity mayhem. Full-screen Mini Vibe controls.",
+  "players": "1",
+  "time": "",
+  "category": "Arcade",
+  "image": "games/anti-gravity-brothers/cover.png",
+  "featured": true,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/anti-gravity-brothers/six-player.html",
+  "controls": "Mini Vibe touchscreen and buttons / PC keyboard or gamepad",
+  "tournament": false,
+  "gameType": "html",
+  "miniVibeUrl": "/games/anti-gravity-brothers/vibe.html",
+  "vibeUrl": "/games/anti-gravity-brothers/vibe.html",
+  "controllerUrl": "/games/anti-gravity-brothers/vibe.html"
+}

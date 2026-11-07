@@ -1,0 +1,17 @@
+{
+  "id": "reel-mayhem",
+  "name": "Reel Mayhem",
+  "tagline": "Six anglers. Five worlds. One legendary catch.",
+  "description": "Six-player fishing mayhem with five 90-second rounds.",
+  "players": "2–6",
+  "time": "5 x 90 seconds",
+  "category": "Arcade",
+  "image": "games/reel-mayhem/reel_mayhem.jpg",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/reel-mayhem/index.html",
+  "controls": "Mini Vibe controllers; cast and reel. Six-player relay requires testing.",
+  "tournament": true,
+  "gameType": "html"
+}

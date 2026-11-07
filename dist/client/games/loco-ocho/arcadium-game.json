@@ -1,0 +1,17 @@
+{
+  "id": "loco-ocho",
+  "name": "Loco Ocho",
+  "tagline": "Roll the eights. Lock them in. Go loco!",
+  "description": "Six-player dice mayhem with eight gang-member levels, private Mini Vibe screens, and Ghost Powers.",
+  "players": "6",
+  "time": "5\u201310 min",
+  "category": "Dice",
+  "image": "/games/loco-ocho/loco_ocho_card.png",
+  "featured": true,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/loco-ocho/index.html",
+  "controls": "Six Mini Vibes / physical buttons",
+  "tournament": true,
+  "gameType": "html"
+}

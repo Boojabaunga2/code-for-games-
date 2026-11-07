@@ -1,0 +1,20 @@
+{
+  "id": "high-noon",
+  "name": "HIGH NOON",
+  "tagline": "3 · 2 · 1 · DRAW!",
+  "description": "Connected LAN Mini Vibe Sheriff controller and GoDice host",
+  "players": "2–6",
+  "category": "Competitive",
+  "image": "games/high-noon/high_noon_square_card.png",
+  "featured": true,
+  "active": true,
+  "launchUrl": "/games/high-noon/index.html",
+  "controls": "Mini Vibe connected to High Noon PC host",
+  "gameType": "html",
+  "miniVibeUrl": "/games/high-noon/vibe.html",
+  "mobileUrl": "/games/high-noon/mobile.html",
+  "hostControlUrl": "/games/high-noon/host-control.html",
+  "vibeUrl": "/games/high-noon/vibe.html",
+  "controllerUrl": "/games/high-noon/vibe.html",
+  "miniVibeLaunchUrl": "/games/high-noon/vibe.html"
+}

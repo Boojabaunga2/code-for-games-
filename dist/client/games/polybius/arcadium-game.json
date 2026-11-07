@@ -1,0 +1,17 @@
+{
+  "id": "polybius",
+  "name": "Polybius: Sixth Signal",
+  "tagline": "Polybius: Sixth Signal for Arcadium",
+  "description": "Polybius: Sixth Signal — original Arcadium HTML game.",
+  "players": "1–6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/polybius.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/polybius/index.html",
+  "controls": "Original game controls; Mini Vibe operation not verified",
+  "tournament": true,
+  "gameType": "html"
+}

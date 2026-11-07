@@ -1,0 +1,17 @@
+{
+  "id": "arcadium-10000",
+  "name": "10,000",
+  "tagline": "10,000 for Arcadium",
+  "description": "10,000 — original Arcadium HTML game.",
+  "players": "1–6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/arcadium-10000.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/arcadium-10000/index.html",
+  "controls": "Original game controls; Mini Vibe operation not verified",
+  "tournament": true,
+  "gameType": "html"
+}

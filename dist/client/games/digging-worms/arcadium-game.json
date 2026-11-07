@@ -1,0 +1,17 @@
+{
+  "id": "digging-worms",
+  "name": "Digging Worms",
+  "tagline": "Dig deep. Ghosts freeze the enemy.",
+  "description": "Dig deep. Ghosts freeze the enemy. Arcadium Vibe-ready game with game-specific ghost action.",
+  "players": "1 + 5 ghost helpers",
+  "time": "5 min",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/digging-worms.png?v=20261017_175351",
+  "featured": true,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/digging-worms/index.html",
+  "controls": "Six Mini Vibes, game-specific ghost power X",
+  "tournament": false,
+  "gameType": "html"
+}

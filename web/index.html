@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Arcadium Home Vibe</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        color: #f7f8ff;
+        background: #090d19;
+        font: 17px system-ui;
+      }
+      main {
+        max-width: 1040px;
+        margin: auto;
+        padding: 60px 24px;
+      }
+      small {
+        font-weight: 800;
+        color: #7ce4ec;
+        letter-spacing: 3px;
+      }
+      h1 {
+        font-size: clamp(44px, 8vw, 86px);
+        line-height: 1;
+        margin: 22px 0;
+      }
+      h1 em {
+        color: #c7a5ff;
+        font-style: normal;
+      }
+      p {
+        color: #b9c2d7;
+        line-height: 1.6;
+      }
+      .options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin: 38px 0;
+      }
+      .card {
+        padding: 28px;
+        background: #151b2d;
+        border: 1px solid #303b56;
+        border-radius: 22px;
+      }
+      h2 {
+        margin-top: 0;
+      }
+      button,
+      input {
+        font: inherit;
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid #55617e;
+      }
+      button {
+        background: #bb9af7;
+        color: #111329;
+        font-weight: 800;
+        cursor: pointer;
+        width: 100%;
+      }
+      button:disabled {
+        opacity: 0.6;
+      }
+      input {
+        width: 100%;
+        background: #090d19;
+        color: white;
+        margin: 0 0 12px;
+        letter-spacing: 6px;
+      }
+      footer {
+        font-size: 14px;
+        color: #91a0ba;
+      }
+      .seats {
+        display: flex;
+        gap: 10px;
+        margin-top: 28px;
+      }
+      .seats i {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--color);
+      }
+      #status {
+        min-height: 30px;
+        color: #ffce88;
+      }
+      @media (max-width: 650px) {
+        main {
+          padding-top: 34px;
+        }
+        .options {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <small>ARCADIUM · HOME VIBE</small>
+      <h1>Your home.<br />Your <em>arena.</em></h1>
+      <p>
+        One tablet. Up to six phones. Pick your colour and bring your people.<br />Android
+        and iPhone play together in their browsers.
+      </p>
+      <div class="seats" aria-label="Six player colours">
+        <i style="--color: #ff5366"></i><i style="--color: #5b9cff"></i
+        ><i style="--color: #60dc98"></i><i style="--color: #f9d85c"></i
+        ><i style="--color: #f797ce"></i><i style="--color: #eee"></i>
+      </div>
+      <section class="options">
+        <article class="card">
+          <h2>The big screen</h2>
+          <p>
+            Open here on your tablet. Create a room, then share its QR code with
+            your players.
+          </p>
+          <button id="host">Create game room →</button>
+        </article>
+        <form class="card" id="join">
+          <h2>Your phone</h2>
+          <p>
+            Scan the tablet’s QR code, or enter its six-digit room code below.
+          </p>
+          <label for="pin">Room code</label
+          ><input
+            id="pin"
+            name="pin"
+            inputmode="numeric"
+            autocomplete="off"
+            pattern="[0-9]{6}"
+            maxlength="6"
+            required
+            placeholder="000000"
+          /><button>Join your people →</button>
+        </form>
+      </section>
+      <p id="status" role="status"></p>
+      <footer>
+        Private online rooms · Internet required during play · Keep the tablet’s
+        host tab open<br />Unlimited free play. Official competitions, paid
+        services and rewards are not connected.
+      </footer>
+    </main>
+    <script>
+      const status = document.getElementById("status");
+      async function post(path, data) {
+        const r = await fetch(path, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        const value = await r.json();
+        if (!r.ok) throw Error(value.error || "Please try again.");
+        return value;
+      }
+      document.getElementById("host").onclick = async function () {
+        this.disabled = true;
+        status.textContent = "Opening your game room…";
+        try {
+          const data = await post("/web/rooms", {});
+          location.href = data.host;
+        } catch (e) {
+          status.textContent = e.message;
+          this.disabled = false;
+        }
+      };
+      document.getElementById("join").onsubmit = async function (e) {
+        e.preventDefault();
+        this.querySelector("button").disabled = true;
+        try {
+          const data = await post("/web/find-room", {
+            pin: document.getElementById("pin").value,
+          });
+          location.href = data.join;
+        } catch (e) {
+          status.textContent = e.message;
+          this.querySelector("button").disabled = false;
+        }
+      };
+    </script>
+  </body>
+</html>

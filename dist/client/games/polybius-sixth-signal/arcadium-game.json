@@ -1,0 +1,17 @@
+{
+  "id": "polybius-sixth-signal",
+  "name": "POLYBIUS: SIXTH SIGNAL",
+  "tagline": "Imported HTML game",
+  "description": "Imported into Arcadium OS. Edit this game in Admin to add description, art, controls, and tournament settings.",
+  "players": "2–6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/polybius.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/polybius-sixth-signal/index.html",
+  "controls": "",
+  "tournament": true,
+  "gameType": "html"
+}

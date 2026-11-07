@@ -1,0 +1,17 @@
+{
+  "id": "dirty-pips",
+  "name": "Dirty Pips",
+  "tagline": "Dirty Pips for Arcadium",
+  "description": "Dirty Pips — original Arcadium HTML game.",
+  "players": "1–6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/dirty-pips.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/dirty-pips/index.html",
+  "controls": "Original game controls; Mini Vibe operation not verified",
+  "tournament": true,
+  "gameType": "html"
+}

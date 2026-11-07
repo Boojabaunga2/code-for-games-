@@ -1,0 +1,17 @@
+{
+  "id": "riotball",
+  "name": "Riotball",
+  "tagline": "3 vs 3. Six players. Total chaos.",
+  "description": "Six-player arena sport with three 90-second matches, riot events, special shots and knocked-down ghost powers. Mini Vibe A kick, B tackle/ghost, X special/ghost, D-pad move.",
+  "players": "6",
+  "time": "5 min",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/arcadium-art-riotball-20261017_182733.png",
+  "featured": true,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/riotball/index.html",
+  "controls": "Six Mini Vibes / physical D-pad + A B X",
+  "tournament": true,
+  "gameType": "html"
+}

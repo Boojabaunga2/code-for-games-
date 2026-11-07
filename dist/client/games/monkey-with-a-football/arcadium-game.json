@@ -1,0 +1,17 @@
+{
+  "id": "monkey-with-a-football",
+  "name": "Monkey With A Football",
+  "tagline": "Monkey With A Football for Arcadium",
+  "description": "Monkey With A Football — original Arcadium HTML game.",
+  "players": "1–6",
+  "time": "",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/monkey-with-a-football.png?v=20261017_175351",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/monkey-with-a-football/index.html",
+  "controls": "Original game controls; Mini Vibe operation not verified",
+  "tournament": true,
+  "gameType": "html"
+}

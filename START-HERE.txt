@@ -1,0 +1,9 @@
+Home Vibe browser-host validation build
+
+Requires Node 24 on a separate server for local hosting. Extract this ZIP and run npm start in the folder containing package.json. Then open http://SERVER-LAN-IP:8789 from your tablet and phones.
+
+The hosted online edition uses a website instead and requires internet. A tablet running Chrome alone cannot accept incoming LAN connections.
+
+Includes all 50 existing catalogue games and player art. Nine automated checks pass; physical Android Chrome/iPhone Safari playtests and game-by-game completion remain pending. Official payments/rewards are not connected.
+
+This package is run-ready. Rebuilding requires the original repository asset directories. Source: https://github.com/Boojabaunga2/Arcadium-Home-OS/pull/38 (8fc1927).

@@ -1,0 +1,17 @@
+{
+  "id": "barrel-bash",
+  "name": "ARCADIUM: BARREL BASH",
+  "tagline": "Six spinning wheels. Five rounds. One perfectly timed throw.",
+  "description": "Six-player spinning-dog dart challenge. Everyone scores every round.",
+  "players": "1\u20136",
+  "time": "5 quick rounds",
+  "category": "Arcade",
+  "image": "assets/games_mockup.webp",
+  "featured": false,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/barrel-bash/index.html",
+  "controls": "Six Mini Vibes: A to join and throw",
+  "tournament": true,
+  "gameType": "html"
+}

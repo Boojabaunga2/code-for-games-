@@ -1,0 +1,96 @@
+GUMPY - TEST REPORT  (build of 19 Oct 2026)
+==========================================
+
+RESULT: everything below passed on the final build.
+
+1. RULES ENGINE - node test/engine.test.js  ->  20,568 checks passed, 0 failed
+   - All 75 character IDs: numbering, categories, names, quips, sounds, voice lines,
+     sprite files on disk, sprites embedded in the handheld page.
+   - Card generation: 20,000 cards all valid (right column per letter, FREE center,
+     no duplicate characters), no two identical cards; six different cards per round;
+     fresh cards every round; call deck = all 75, no repeats.
+   - Same seed -> identical cards and call order (replay); same seed + same inputs ->
+     identical whole match.
+   - All five patterns: one square short = FALSE GUMPY, complete = verified GUMPY;
+     a plain row does not win Big X.
+   - Marking: uncalled characters rejected, double marks rejected, late marks allowed.
+   - Claims: false-claim penalty + lock, duplicate claim not processed twice,
+     simultaneous claims inside the 1.5 s window both count, claims after the round
+     closes are rejected, verified winners can't be undone.
+   - Elimination: lowest completion -> fewest legit marks -> digital coin; 6,5,4,3,2
+     active players across rounds; round winner never eliminated; everyone-co-wins case;
+     call limit ending; all-75-called last-chance window; final always has a champion.
+   - Every active power (cost, cooldown, once-per-round, no-instant-win rule, shield,
+     reverse, hit immunity refund) and every chaos event (keeps legit marks + valid cards).
+   - Every ghost power (haunt is temporary, possess keeps characters and marks,
+     poltergeist delay lands, phantom shield blocks, storm once per round, ghost energy
+     and action limits). Ghosts can't mark, claim or target ghosts.
+   - Pause/resume shifts every timer; handheld views carry no other player's card and no deck.
+   - 600 random full matches (aggressive bots: powers, ghosts, false claims) checked
+     continuously: cards always valid, legit marks never removed, calls never repeat,
+     exactly one elimination after rounds 1-4, champion every time.
+     Match length with bots: avg 23.0 min (median 23.0, max 25.5).
+     Avg calls per round: R1 28, R2 57, R3 67, R4 60, R5 71.
+
+2. SIX-HANDHELD END-TO-END - python test/e2e.py  ->  16 passed, 0 failed
+   Real gumpy_8784_addon.py loading a stand-in 8784 server file, big screen loaded
+   from the add-on, six separate 720x720 handheld browsers that act ONLY through their
+   buttons (A, B, X, Y, D-pad), game clock at 6x speed:
+   - Server's own routes still work through the add-on.
+   - All six handhelds connect; a second device asking for an occupied seat is refused.
+   - Round intro on every handheld; no handheld ever receives another player's card.
+   - Handheld 3 unplugged mid-round: big screen shows it offline after ~12 s; reopened,
+     it got the same seat and the same card back.
+   - Full 5-round match to a champion: 346 marks (0 rejected), 45 powers through the
+     handheld power menu + target picker, 40 ghost attacks landed from ghost handhelds,
+     13 GUMPY claims from the Y button, one ghost after each of rounds 1-4.
+   - No script errors on the big screen or any handheld.
+
+3. SCREENS CHECKED BY EYE (screenshots)
+   Big screen: splash, title, lobby, round intro, live calling, GUMPY verification,
+   celebration, results + ghost ceremony, final round with 4 ghost panels, champion.
+   Handheld: lobby, intro, live card, call banner, powers menu, target picker,
+   ghost screen, results, champion. Sandbox mode (6 handhelds on one screen) played
+   by mouse on seat 1.
+
+
+NOT DONE / NOT VERIFIED - please read
+-------------------------------------
+1. Your real files were not attached: no Arcadium OS files, no working game example,
+   no Multi-Vibe 8784 server file. I used the exact add-on pattern from your
+   3 Monkey Mayhem / Dirty Deeds builds (it loads your server and uses its Handler,
+   PORT and ip()). Tested against a stand-in with those names, NOT your real server.
+2. Not tested on real RG Rotates or the real Arcadium PC. A, B and the D-pad use the
+   same mapping as your other games. X (find), Y / START (GUMPY!) and L / R (pick power)
+   are new and unconfirmed on the hardware. Touch works for everything as a fallback.
+3. Exit back to Arcadium OS: no launcher code was supplied, so EXIT sends an
+   "arcadium:exit" message to the parent window, then closes / goes back.
+   This needs checking against how Arcadium OS actually closes games.
+4. Arcadium splash: the square red/black/silver splash art was not attached here, so
+   the loading screens show a code-drawn ARCADIUM "A" placeholder. Send the image and
+   it drops straight in.
+5. Character names: G1-G15 are from your G-column sheet; UFO Abduction (U16), Mutant
+   Banana (M31), Pirate Pug (P46) and Yeti Mayhem (Y61) are from the overview sheet.
+   The other 56 names are PLACEHOLDERS I made up (flagged "provisional" in
+   GUMPY_characters.json).
+6. Your sheets disagree on G numbers. The production grid puts Gear Shark at G8, but the
+   G-column sheet and every call example say G7 Gear Shark, so I followed the G-column
+   sheet. The grid's G9 (sunglasses gorilla), G14 (gold monkey) and G15 (robot) are not
+   used. Galactic Alien, Golden Banana and Goat Wizard had no grid icon, so their card
+   icons are square cuts from the G-column art (slightly different style).
+   Some characters look alike across columns (alien G2/U16, banana G3/M31/Y62,
+   yetis U19/Y61/Y65/Y74, yin-yang P58/Y67) - that's in the source art.
+7. Sprites are cut from flat poster images, so they are JPEGs with their dark tile
+   backgrounds, not transparent PNGs (you asked for JPEG for Android anyway).
+   Every sprite is a separate file in assets\.
+8. Host poses: idle, talking, title, hype, laughing, results and party come from your
+   art. Angry, shocked and ghost-invasion are the same art with red / flash / ghost
+   effects - there is no dedicated art for them.
+9. Animation: every call uses one shared animated reveal (zoom, rays, flash, wobble).
+   G1-G15 and Mutant Banana use the big scene art; the others use the enlarged icon.
+   No per-character animation frames exist in the art.
+10. Sounds are built-in synth placeholders on named hooks (every character gets its own
+    3-note jingle). Host voice uses the PC's built-in speech voice and is optional.
+11. Pacing: ~23 minutes per match with 5.5 s per call and turbo (3.5 s) after 30 calls.
+    Rounds 2-5 need 55-73 calls. Change the marking window in F9 if it feels slow/fast.
+12. Collectibles / DCU ownership and trading: not in this version (as the brief said).

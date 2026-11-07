@@ -1,0 +1,17 @@
+{
+  "id": "gearfall",
+  "name": "Gearfall",
+  "tagline": "Robots fall. Ghosts rise.",
+  "description": "Robots fall. Ghosts rise. Arcadium Vibe-ready game with game-specific ghost action.",
+  "players": "6",
+  "time": "5 min",
+  "category": "Arcade",
+  "image": "assets/carousel-cards/arcadium-art-gearfall-20261017_182733.png",
+  "featured": true,
+  "active": true,
+  "launchTarget": "",
+  "launchUrl": "/games/gearfall/index.html",
+  "controls": "Six Mini Vibes, game-specific ghost power X",
+  "tournament": true,
+  "gameType": "html"
+}
