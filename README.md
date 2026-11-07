@@ -46,7 +46,7 @@ Hosting access is separate from room privacy: an owner-private Sites deployment 
 
 ## Staged releases and owner controls
 
-The initial online lineup is 10,000 (dice), Ghost Grind (action), and What The Duck?! (funny). The other 47 covers remain visible in grey with Coming soon labels. Launch APIs and game-page routes reject unreleased games.
+The initial online lineup is 10,000 (dice), Project Ghost: Zero Trust (flagship action/heist), and What The Duck?! (funny). The other 47 covers remain visible in grey with Coming soon labels. Launch APIs and game-page routes reject unreleased games.
 
 Visit `/admin`, or choose Owner controls from the landing page, and sign in with the ChatGPT account that owns this Site. Owner identity is bootstrapped against the secret `HOME_VIBE_OWNER_EMAIL` runtime value and then bound to the stable, dispatch-verified Site user ID when supplied. Sessions that supply only the dispatch-verified email remain restricted to the configured owner email; anonymous client identity headers are stripped by Sites. Room ownership grants no global release permission. Do not trust user-supplied identity headers on a self-hosted Node server; its owner panel is disabled without the Sites identity integration.
 

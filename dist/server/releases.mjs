@@ -1,5 +1,9 @@
 // Global staged releases. Room hosting never grants site-owner privileges.
-export const LAUNCH_GAMES = ["arcadium-10000", "ghost-grind", "what-the-duck"];
+export const LAUNCH_GAMES = [
+  "arcadium-10000",
+  "project-ghost",
+  "what-the-duck",
+];
 const SCOPE = "__site__",
   KEY = "releases";
 export function releasesService({
@@ -10,8 +14,35 @@ export function releasesService({
   fail,
   serveAsset,
 }) {
-  const defaults = { ids: LAUNCH_GAMES, revision: 0 };
-  const get = () => store.value(SCOPE, KEY, defaults);
+  const defaults = { ids: LAUNCH_GAMES, revision: 1, lineupVersion: 1 };
+  async function get() {
+    // Apply the owner's requested flagship swap once to existing saved lineups.
+    // Later owner edits are preserved, including re-releasing Ghost Grind.
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const current = await store.value(SCOPE, KEY, defaults);
+      if (current.lineupVersion === 1) return current;
+      const ids = [
+        ...new Set(
+          current.ids.map((id) =>
+            id === "ghost-grind" ? "project-ghost" : id,
+          ),
+        ),
+      ];
+      if (!ids.includes("project-ghost")) ids.push("project-ghost");
+      const next = {
+        ...current,
+        ids,
+        revision: current.revision + 1,
+        lineupVersion: 1,
+      };
+      const updated = await store.run(
+        "UPDATE hv_values SET value=? WHERE room=? AND key=? AND value=?",
+        [JSON.stringify(next), SCOPE, KEY, JSON.stringify(current)],
+      );
+      if (updated.meta.changes) return next;
+    }
+    fail("The lineup changed in another tab. Please reload.", 409);
+  }
   async function owner(req) {
     const id = req.headers.get("oai-authenticated-user-id");
     const emailMatches =
@@ -94,7 +125,11 @@ export function releasesService({
       fail("Releases changed in another tab. Reload before saving.", 409);
     const added = data.ids.filter((id) => !current.ids.includes(id));
     if (added.length > 2) fail("Release one or two new games at a time.");
-    const next = { ids: data.ids, revision: current.revision + 1 };
+    const next = {
+      ids: data.ids,
+      revision: current.revision + 1,
+      lineupVersion: 1,
+    };
     await store.run(
       "INSERT OR IGNORE INTO hv_values(room,key,value) VALUES(?,?,?)",
       [SCOPE, KEY, JSON.stringify(defaults)],
