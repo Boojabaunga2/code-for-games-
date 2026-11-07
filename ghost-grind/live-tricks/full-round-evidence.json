@@ -1,0 +1,69 @@
+{
+  "movesSeen": [
+    "BACKFLIP",
+    "720 SPIN",
+    "INDY GRAB",
+    "FRONTFLIP",
+    "VARIAL FLIP",
+    "DOUBLE FLIP",
+    "HEELFLIP",
+    "KICKFLIP",
+    "MELON GRAB"
+  ],
+  "capture": "Live approved tricks build, actual Java host, automated six-phone inputs; normal-speed full first round, natural elimination and round-two ghost mode. No state fixtures or timer acceleration.",
+  "round": 2,
+  "history": [
+    {
+      "round": 1,
+      "loser": 4,
+      "tied": false,
+      "tiebreak": "Lowest landed score",
+      "scores": [
+        19502,
+        18975,
+        19772,
+        18219,
+        16760,
+        17557
+      ]
+    }
+  ],
+  "players": [
+    {
+      "name": "RED",
+      "alive": true,
+      "haunts": 0,
+      "score": 2350
+    },
+    {
+      "name": "BLUE",
+      "alive": true,
+      "haunts": 0,
+      "score": 3012
+    },
+    {
+      "name": "GREEN",
+      "alive": true,
+      "haunts": 0,
+      "score": 1553
+    },
+    {
+      "name": "YELLOW",
+      "alive": true,
+      "haunts": 0,
+      "score": 905
+    },
+    {
+      "name": "PINK",
+      "alive": false,
+      "haunts": 3,
+      "score": 0
+    },
+    {
+      "name": "WHITE",
+      "alive": true,
+      "haunts": 0,
+      "score": 864
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "movesSeen": [
+    "720 SPIN",
+    "BACKFLIP",
+    "INDY GRAB",
+    "FRONTFLIP",
+    "VARIAL FLIP",
+    "DOUBLE FLIP",
+    "HEELFLIP",
+    "KICKFLIP",
+    "MELON GRAB"
+  ],
+  "capture": "Live approved tricks build, actual Java host, automated six-phone inputs; normal-speed first-round gameplay showing all nine integrated moves. Previous full-round recording separately verifies natural ghost elimination. No state fixtures or timer acceleration.",
+  "round": 1,
+  "history": [],
+  "players": [
+    {
+      "name": "RED",
+      "alive": true,
+      "haunts": 0,
+      "score": 5740
+    },
+    {
+      "name": "BLUE",
+      "alive": true,
+      "haunts": 0,
+      "score": 6361
+    },
+    {
+      "name": "GREEN",
+      "alive": true,
+      "haunts": 0,
+      "score": 6496
+    },
+    {
+      "name": "YELLOW",
+      "alive": true,
+      "haunts": 0,
+      "score": 4943
+    },
+    {
+      "name": "PINK",
+      "alive": true,
+      "haunts": 0,
+      "score": 5605
+    },
+    {
+      "name": "WHITE",
+      "alive": true,
+      "haunts": 0,
+      "score": 5186
+    }
+  ]
+}
