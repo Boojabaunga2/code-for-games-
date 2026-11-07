@@ -14,15 +14,16 @@ export function releasesService({
   const get = () => store.value(SCOPE, KEY, defaults);
   async function owner(req) {
     const id = req.headers.get("oai-authenticated-user-id");
-    if (!id) return false;
+    const emailMatches =
+      !!ownerEmail &&
+      req.headers.get("oai-authenticated-user-email")?.toLowerCase() ===
+        ownerEmail.toLowerCase();
+    // Some Sites sessions provide verified email without the optional stable ID.
+    // Dispatch strips these reserved headers from anonymous client requests.
+    if (!id) return emailMatches;
     const bound = await store.value(SCOPE, "owner-id", null);
     if (bound) return id === bound;
-    if (
-      !ownerEmail ||
-      req.headers.get("oai-authenticated-user-email")?.toLowerCase() !==
-        ownerEmail.toLowerCase()
-    )
-      return false;
+    if (!emailMatches) return false;
     await store.run(
       "INSERT OR IGNORE INTO hv_values(room,key,value) VALUES(?,?,?)",
       [SCOPE, "owner-id", JSON.stringify(id)],
@@ -34,7 +35,8 @@ export function releasesService({
       return null;
     if (
       url.pathname === "/admin" &&
-      !req.headers.get("oai-authenticated-user-id")
+      !req.headers.get("oai-authenticated-user-id") &&
+      !req.headers.get("oai-authenticated-user-email")
     )
       return new Response(
         '<!doctype html><html lang="en"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Home Vibe owner controls</title><body style="background:#101528;color:white;font:20px system-ui;padding:40px"><h1>Owner controls</h1><p>Sign in with the ChatGPT account that owns this Home Vibe site.</p><a style="color:#c7a5ff" href="/signin-with-chatgpt?return_to=%2Fadmin" target="_top">Sign in to manage releases →</a><p><a style="color:#a9b6ce" href="/">Back to Home Vibe</a></p></body></html>',
