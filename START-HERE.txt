@@ -4,6 +4,8 @@ Requires Node 24 on a separate server for local hosting. Extract this ZIP and ru
 
 The hosted online edition uses a website instead and requires internet. A tablet running Chrome alone cannot accept incoming LAN connections.
 
-Includes all 50 existing catalogue games and player art. Nine automated checks pass; physical Android Chrome/iPhone Safari playtests and game-by-game completion remain pending. Official payments/rewards are not connected.
+Includes all 50 existing catalogue games and player art. Twelve automated checks pass; physical Android Chrome/iPhone Safari playtests and game-by-game completion remain pending. Official payments/rewards are not connected.
 
-This package is run-ready. Rebuilding requires the original repository asset directories. Source: https://github.com/Boojabaunga2/Arcadium-Home-OS/pull/38 (8fc1927).
+This package is run-ready. Rebuilding requires the original repository asset directories. Source: https://github.com/Boojabaunga2/Arcadium-Home-OS/pull/38 (d7f2adc).
+
+Staged lineup: 10,000, Ghost Grind, What The Duck?!. Other cards show Coming soon. Global release administration uses the hosted Sites owner identity and is disabled in this standalone server.

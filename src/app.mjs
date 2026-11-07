@@ -1,4 +1,5 @@
 import { Store } from "./store.mjs";
+import { releasesService } from "./releases.mjs";
 export const COLORS = ["red", "blue", "green", "yellow", "pink", "white"];
 const BUTTONS = [
   "UP",
@@ -61,9 +62,27 @@ export function createApp({
   db,
   readAsset: assetReader,
   catalog,
+  siteOwnerEmail = "",
   now = () => Date.now(),
 }) {
   const store = new Store(db);
+  const releases = releasesService({
+    store,
+    catalog,
+    ownerEmail: siteOwnerEmail,
+    reply,
+    fail,
+    serveAsset,
+  });
+  async function stagedCatalog(roomId) {
+    const release = await releases.get();
+    return catalog
+      .map((g) => ({
+        ...scopeGame(g, roomId),
+        comingSoon: !release.ids.includes(g.id),
+      }))
+      .sort((a, b) => Number(a.comingSoon) - Number(b.comingSoon));
+  }
   async function limit(req, key, max, windowMs) {
     const ip = await hash(req.headers.get("cf-connecting-ip") || "local");
     key = key + ":" + ip;
@@ -614,6 +633,8 @@ export function createApp({
       fail("Cross-origin request denied.", 403);
     if (Number(req.headers.get("content-length") || 0) > 2100000)
       fail("Request too large.", 413);
+    const adminResponse = await releases.handle(req, url);
+    if (adminResponse) return adminResponse;
     if (url.pathname === "/web/rooms" && req.method === "POST") {
       await limit(req, "create", 10, 60000);
       // Bounded expiry cleanup, outside schema migrations and ordinary input polls.
@@ -700,6 +721,15 @@ export function createApp({
     ]);
     if (!room || room.expires < now())
       fail("This room has closed. Create a new room.", 410);
+    const activeGame = parse(room.active).id;
+    if (activeGame && !(await releases.get()).ids.includes(activeGame)) {
+      room.active = "{}";
+      room.public_state = "{}";
+      await store.run(
+        "UPDATE hv_rooms SET active=?,public_state=? WHERE id=?",
+        ["{}", "{}", room.id],
+      );
+    }
     const path = decodeURIComponent(match[2] || "/");
     if (path.includes("..") || path.includes("\\")) fail("Invalid path.", 403);
     let body = {};
@@ -859,8 +889,12 @@ export function createApp({
       if (path === "/web/host/status")
         return reply({
           ...(await state(room)),
-          catalog: catalog.map((g) => scopeGame(g, room.id)),
-          library: { hidden: parse(room.hidden, []), imported: [] },
+          catalog: await stagedCatalog(room.id),
+          library: {
+            hidden: parse(room.hidden, []),
+            imported: [],
+            released: (await releases.get()).ids,
+          },
           pin: room.pin,
           urls: [url.origin + "/r/" + room.id + "/"],
           registration: { verified: false, state: "OFFLINE" },
@@ -870,7 +904,11 @@ export function createApp({
         });
       if (path === "/web/host/activate") {
         const game = catalog.find((g) => g.id === body.id);
-        if (!game || game.requiresBackend)
+        if (
+          !game ||
+          game.requiresBackend ||
+          !(await releases.get()).ids.includes(game.id)
+        )
           fail("This game is unavailable.", 409);
         if (signal(room).out.phase === "RUNNING")
           fail("Finish Signal Sprint first.", 409);
@@ -983,6 +1021,25 @@ export function createApp({
     return transport(req, room, path, body, owner, seat);
   }
   async function serveAsset(name, room, owner, req) {
+    name = name.split("/").filter(Boolean).join("/");
+    if (
+      name.split("/").some((part) => part === "." || part === "..") ||
+      name.includes("\\")
+    )
+      fail("Invalid asset path.", 403);
+    if (room && /\.(?:html|js)$/.test(name)) {
+      const gameId = name.match(/^games\/([^/]+)\//)?.[1];
+      if (
+        (gameId &&
+          catalog.some((g) => g.id === gameId) &&
+          !(await releases.get()).ids.includes(gameId)) ||
+        name.startsWith("classic/games/")
+      )
+        fail(
+          "Coming soon. The site owner has not released this game yet.",
+          403,
+        );
+    }
     const response = await readAssetBytes(name);
     if (!response) return reply({ error: "Not found" }, 404);
     let { bytes, type } = response;
@@ -1068,8 +1125,12 @@ export function createApp({
         const initial = owner
           ? {
               ...(await state(room)),
-              catalog: catalog.map((g) => scopeGame(g, room.id)),
-              library: { hidden: parse(room.hidden, []), imported: [] },
+              catalog: await stagedCatalog(room.id),
+              library: {
+                hidden: parse(room.hidden, []),
+                imported: [],
+                released: (await releases.get()).ids,
+              },
               pin: room.pin,
               urls: [new URL(req.url).origin + prefix + "/"],
               registration: { verified: false, state: "OFFLINE" },

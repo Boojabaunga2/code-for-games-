@@ -162,7 +162,13 @@
     if (stopped) return;
     try {
       await queue.catch(() => {});
-      state = await request("/web/host/status");
+      const next = await request("/web/host/status");
+      const retired =
+        state.pc?.id &&
+        next.catalog?.find((g) => g.id === state.pc.id)?.comingSoon;
+      state = next;
+      if (retired && typeof window.tabletHome === "function")
+        window.tabletHome();
       state.active = selected;
     } catch {}
     setTimeout(refresh, 1000);
@@ -178,6 +184,13 @@
     info.textContent =
       "Hide or restore games for this room. Game-file imports remain available in the Android app.";
     panel.append(info);
+    const ownerLink = document.createElement("a");
+    ownerLink.href = "/admin";
+    ownerLink.target = "_blank";
+    ownerLink.rel = "noopener";
+    ownerLink.textContent = "Site owner: manage game releases →";
+    ownerLink.style.color = "#c7a5ff";
+    panel.append(ownerLink);
     for (const game of state.catalog || []) {
       const line = document.createElement("label");
       line.style.cssText = "display:flex;gap:12px;padding:8px";
@@ -226,7 +239,9 @@
     getHeld: () => input.masks[selected] || 0,
     activate: (id) => {
       if (
-        !state.catalog?.some((g) => g.id === id && !g.requiresBackend) ||
+        !state.catalog?.some(
+          (g) => g.id === id && !g.requiresBackend && !g.comingSoon,
+        ) ||
         state.game?.phase === "RUNNING"
       )
         return false;

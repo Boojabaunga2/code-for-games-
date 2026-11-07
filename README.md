@@ -43,3 +43,11 @@ Physical Android Chrome and iPhone Safari playtests remain necessary, particular
 Game imports remain in the Android application; browser management currently hides/restores bundled games per room. Official competition, licensing, account ownership, payments, ViBUCKS and rewards remain unavailable until their actual backend services are connected. Free play stays unlimited.
 
 Hosting access is separate from room privacy: an owner-private Sites deployment requires the owner's ChatGPT login and is not a guest phone launch. Guest controller access needs a public entry page (with individual rooms still protected by pairing codes and seat tokens), enabled explicitly by the owner.
+
+## Staged releases and owner controls
+
+The initial online lineup is 10,000 (dice), Ghost Grind (action), and What The Duck?! (funny). The other 47 covers remain visible in grey with Coming soon labels. Launch APIs and game-page routes reject unreleased games.
+
+Visit `/admin`, or choose Owner controls from the landing page, and sign in with the ChatGPT account that owns this Site. Owner identity is bootstrapped against the secret `HOME_VIBE_OWNER_EMAIL` runtime value and then bound to the stable, dispatch-verified Site user ID. Room ownership grants no global release permission. Do not trust user-supplied identity headers on a self-hosted Node server; its owner panel is disabled without the Sites identity integration.
+
+Select one or two new games and save to release them across every room. The panel can also take games offline; their cards return to Coming soon, and active sessions stop that game. Concurrent saves are checked against the release revision. Global release choices persist independently of individual room expiry. Existing service requirements still apply.

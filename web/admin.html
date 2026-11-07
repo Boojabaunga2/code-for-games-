@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Home Vibe · Owner controls</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #090d19;
+        color: #f7f8ff;
+        font: 16px system-ui;
+      }
+      header,
+      main {
+        max-width: 1180px;
+        margin: auto;
+        padding: 24px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      a {
+        color: #c7a5ff;
+      }
+      h1 {
+        font-size: 38px;
+        margin: 10px 0;
+      }
+      p {
+        color: #b7c3da;
+        line-height: 1.6;
+      }
+      .bar {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        padding: 18px;
+        background: #11192df5;
+        border: 1px solid #3e4b66;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .bar strong {
+        flex: 1;
+      }
+      button,
+      input {
+        font: inherit;
+        border: 1px solid #53617d;
+        border-radius: 10px;
+        padding: 12px;
+      }
+      button {
+        background: #c4a1ff;
+        color: #111425;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: default;
+      }
+      #search {
+        margin: 24px 0;
+        width: 100%;
+        background: #151c30;
+        color: white;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+        gap: 18px;
+      }
+      .game {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+        background: #151c30;
+        border: 1px solid #35415c;
+        border-radius: 16px;
+      }
+      .game img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .game.pending img {
+        filter: grayscale(1);
+        opacity: 0.5;
+      }
+      .game label {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        font-weight: 700;
+      }
+      .game small {
+        color: #b7c3da;
+      }
+      .game input {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+      }
+      #message {
+        min-height: 26px;
+        color: #ffda9e;
+      }
+      small.eyebrow {
+        color: #7ce4ec;
+        font-weight: 800;
+        letter-spacing: 2px;
+      }
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>ARCADIUM · HOME VIBE</strong><a href="/">Game room →</a>
+    </header>
+    <main>
+      <small class="eyebrow">OWNER CONTROLS</small>
+      <h1>Your games. Your release schedule.</h1>
+      <p>
+        Live games are playable in every room. Unreleased games keep their
+        artwork and show <strong>Coming soon</strong> in grey. Add one or two
+        new games per release; changes apply across the site. Taking a game
+        offline ends its active rooms.
+      </p>
+      <div class="bar">
+        <strong id="count">Loading your games…</strong><span id="changes"></span
+        ><button id="save" disabled>Save releases</button
+        ><button id="reload">Reload</button>
+      </div>
+      <p id="message" role="status"></p>
+      <input
+        id="search"
+        type="search"
+        placeholder="Find a game…"
+        aria-label="Search games"
+      />
+      <section
+        class="grid"
+        id="games"
+        aria-label="Game release controls"
+      ></section>
+    </main>
+    <script>
+      let current = null,
+        selected = new Set(),
+        busy = false;
+      const byId = (id) => document.getElementById(id);
+      async function api(data) {
+        const response = await fetch("/web/admin/releases", {
+          method: data ? "POST" : "GET",
+          headers: data ? { "content-type": "application/json" } : {},
+          body: data ? JSON.stringify(data) : undefined,
+          cache: "no-store",
+          signal: AbortSignal.timeout(10000),
+        });
+        const value = await response.json();
+        if (!response.ok)
+          throw Error(value.error || "Unable to load releases.");
+        return value;
+      }
+      function summary() {
+        if (!current) return;
+        const added = [...selected].filter((id) => !current.ids.includes(id)),
+          removed = current.ids.filter((id) => !selected.has(id));
+        byId("count").textContent =
+          selected.size +
+          " live · " +
+          (current.games.length - selected.size) +
+          " coming soon";
+        byId("changes").textContent =
+          added.length + " new · " + removed.length + " taken offline";
+        byId("save").disabled =
+          busy || added.length > 2 || (!added.length && !removed.length);
+        if (added.length > 2)
+          byId("message").textContent =
+            "Choose no more than two new games for this release.";
+        else if (!busy) byId("message").textContent = "";
+      }
+      function render() {
+        byId("games").replaceChildren();
+        for (const game of current.games) {
+          const row = document.createElement("article");
+          row.className = "game";
+          row.dataset.title = game.title.toLowerCase();
+          row.classList.toggle("pending", !selected.has(game.id));
+          const image = document.createElement("img");
+          image.src = game.cover;
+          image.alt = game.title + " cover";
+          image.loading = "lazy";
+          const label = document.createElement("label"),
+            check = document.createElement("input");
+          check.type = "checkbox";
+          check.checked = selected.has(game.id);
+          check.disabled = !!game.requiresBackend;
+          check.onchange = () => {
+            check.checked ? selected.add(game.id) : selected.delete(game.id);
+            row.classList.toggle("pending", !check.checked);
+            note.textContent = check.checked ? "LIVE" : "COMING SOON";
+            summary();
+          };
+          label.append(check, document.createTextNode(game.title));
+          const note = document.createElement("small");
+          note.textContent = game.requiresBackend
+            ? "Required game service is not connected"
+            : check.checked
+              ? "LIVE"
+              : "COMING SOON";
+          row.append(image, label, note);
+          byId("games").append(row);
+        }
+        summary();
+        filter();
+      }
+      function filter() {
+        const search = byId("search").value.trim().toLowerCase();
+        for (const row of byId("games").children)
+          row.hidden = !row.dataset.title.includes(search);
+      }
+      async function load() {
+        busy = true;
+        byId("save").disabled = true;
+        try {
+          current = await api();
+          selected = new Set(current.ids);
+          busy = false;
+          render();
+        } catch (e) {
+          byId("message").textContent = e.message;
+        } finally {
+          busy = false;
+        }
+      }
+      byId("search").oninput = filter;
+      byId("reload").onclick = load;
+      byId("save").onclick = async () => {
+        if (busy) return;
+        busy = true;
+        summary();
+        try {
+          const result = await api({
+            ids: [...selected],
+            expectedRevision: current.revision,
+          });
+          current = { ...current, ...result };
+          selected = new Set(result.ids);
+          busy = false;
+          render();
+          byId("message").textContent =
+            "Saved. Your release is live across Home Vibe.";
+        } catch (e) {
+          byId("message").textContent = e.message;
+        } finally {
+          busy = false;
+          const message = byId("message").textContent;
+          summary();
+          byId("message").textContent = message;
+        }
+      };
+      load();
+    </script>
+  </body>
+</html>
