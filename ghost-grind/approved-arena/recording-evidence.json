@@ -1,0 +1,58 @@
+{
+  "capture": "Approved-layout playable build, actual Java host, automated six-phone inputs; normal-speed full first round, natural elimination and round-two ghost mode. No state fixtures or timer acceleration.",
+  "round": 2,
+  "history": [
+    {
+      "round": 1,
+      "loser": 5,
+      "tied": false,
+      "tiebreak": "Lowest landed score",
+      "scores": [
+        21689,
+        17242,
+        20004,
+        16836,
+        16499,
+        6024
+      ]
+    }
+  ],
+  "players": [
+    {
+      "name": "RED",
+      "alive": true,
+      "haunts": 0,
+      "score": 2894
+    },
+    {
+      "name": "BLUE",
+      "alive": true,
+      "haunts": 0,
+      "score": 2108
+    },
+    {
+      "name": "GREEN",
+      "alive": true,
+      "haunts": 0,
+      "score": 1887
+    },
+    {
+      "name": "YELLOW",
+      "alive": true,
+      "haunts": 0,
+      "score": 1581
+    },
+    {
+      "name": "PINK",
+      "alive": true,
+      "haunts": 0,
+      "score": 1581
+    },
+    {
+      "name": "WHITE",
+      "alive": false,
+      "haunts": 3,
+      "score": 0
+    }
+  ]
+}
