@@ -1,0 +1,35 @@
+{
+  "game": "WORM WHIPLASH",
+  "version": "V1",
+  "sourceCommit": "524ffc2c919befc7313f8724a7c4339461d15dc3",
+  "files": {
+    "card.png": {
+      "bytes": 3462864,
+      "sha256": "3dc8fa527c1d3164c9f45fe61bdb381c88b395bac7b260eb0bfbaa8f74049da6"
+    },
+    "actual-stretch.png": {
+      "bytes": 1570627,
+      "sha256": "9a9a163d0c479472d67c6ef760bea01b33295306d48f20392adabfd72340df05"
+    },
+    "actual-gameplay.png": {
+      "bytes": 1801767,
+      "sha256": "16da03e4795fbbd9f91fc235ef87636f0a237eabc0d7e467d965447645cb403a"
+    },
+    "red-mini.png": {
+      "bytes": 647451,
+      "sha256": "06a3201f4de8b80df62b9bcaefa0d1accfc5bec2b297bbdae00836e117e60e83"
+    },
+    "ARCADIUM_WORM_WHIPLASH_V1.sha256": {
+      "bytes": 96,
+      "sha256": "54d9ccc1655d223210e768b18e838929468753bb52873a4cf2cfd6ee3d09cfec"
+    },
+    "WORM_WHIPLASH_GAMEPLAY.mp4": {
+      "bytes": 10694860,
+      "sha256": "a8f89a5048dd9afd28f2725a9b3ac95aaf3f4911a8b3baf0aa5afd16441bab6f"
+    },
+    "ARCADIUM_WORM_WHIPLASH_V1.zip": {
+      "bytes": 10765247,
+      "sha256": "44834430ef7e9ce5e80eda453ebfe8d1ca73807566743ffee11b1a304dece734"
+    }
+  }
+}
