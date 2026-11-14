@@ -1,11 +1,7 @@
-# Arcadium · Worm Whiplash V1
+# Arcadium · Worm Whiplash
 
-Complete main-PC-OS game ZIP, actual browser gameplay video, square card and screenshots.
+**V2 gameplay upgrade:** complete ZIP and real gameplay video with sound in [worm-whiplash-v2](worm-whiplash-v2/). Independent power/angle aiming, a full flight preview and contact marker, explosive barrels, weak supports, bonus targets, chain combos, saved best shots, stronger impacts and quicker reloads.
 
-Extract the entire ZIP, close the existing Arcadium server console, run START_INSTALL.cmd and select the existing Arcadium_OS_COMPACT folder containing arcadium_server.py. Existing shared Mini Vibe input; no APK update.
+Extract the entire V2 ZIP, close the existing Arcadium server console, run START_INSTALL.cmd and select your existing Arcadium_OS_COMPACT folder. No APK update.
 
-Six simultaneous arenas; stretch the worm with A + D-pad and release A to launch. B triggers its unique ability. Three rounds, three launches. Unlimited practice.
-
-Red Blast · Blue Split · Green Acid · Yellow Ricochet · Pink Grapple · White Shockwave.
-
-Automated engine, browser, installation and host tests passed. The video shows real mouse input followed by the labelled CPU demo. Physical Mini Vibes, exact installed OS, Wi-Fi, human balance and recipient antivirus acceptance remain unverified.
+The original V1 download remains in [worm-whiplash](worm-whiplash/). Physical Mini Vibes, exact installed OS, Wi-Fi, six-human balance and recipient antivirus acceptance still require live testing.

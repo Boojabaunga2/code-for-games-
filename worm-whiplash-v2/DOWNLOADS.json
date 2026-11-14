@@ -1,0 +1,40 @@
+{
+  "game": "WORM WHIPLASH",
+  "version": "V2",
+  "sourceCommit": "f3bf2c5e92339d48f5bacb92ffb0aef2e14bcd3a",
+  "video": "Actual mouse input and labelled CPU demo with captured game audio.",
+  "files": {
+    "v2-impact.png": {
+      "bytes": 1640071,
+      "sha256": "214923181ccf454efc8416d6460675ce5f36e94017ce5e59260e14d5eedb3e9b"
+    },
+    "red-mini.png": {
+      "bytes": 646087,
+      "sha256": "c28f1d9654b2f21f21d854c04788ea5f5ddc5af503fb70cae745c929dec0a426"
+    },
+    "v2-aiming.png": {
+      "bytes": 1571016,
+      "sha256": "9fbb8d69aed7a18f8df915d8fd8022592800013ce1f89293afdbffee63b1431a"
+    },
+    "WORM_WHIPLASH_V2_GAMEPLAY.mp4": {
+      "bytes": 9743475,
+      "sha256": "12a95d01543ef1eefa5c9adb31f3e5d17b2d070ec9cd4580ca67f4dea5dac87e"
+    },
+    "README.md": {
+      "bytes": 4628,
+      "sha256": "0c693c2d322ee03eb68a49549f9faa7bf42b49dbe26282bcb8262680a64d74b5"
+    },
+    "v2-chain-reaction.png": {
+      "bytes": 2939176,
+      "sha256": "482886b504fd1bf1196af1283c8331a21330ad0d91a87d5f44477bd496da3c43"
+    },
+    "ARCADIUM_WORM_WHIPLASH_V2.zip": {
+      "bytes": 10772237,
+      "sha256": "a7344835695a580fabb09e393742bc399e6e4396aba4cb28e8aef8b0b84e165f"
+    },
+    "ARCADIUM_WORM_WHIPLASH_V2.sha256": {
+      "bytes": 96,
+      "sha256": "4cec00f9655381e5bf7d92b616e9fa383ee5e674b3988d4492d99f663135c3b5"
+    }
+  }
+}
