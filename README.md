@@ -1,7 +1,7 @@
 # Arcadium · Worm Whiplash
 
-**V2 gameplay upgrade:** complete ZIP and real gameplay video with sound in [worm-whiplash-v2](worm-whiplash-v2/). Independent power/angle aiming, a full flight preview and contact marker, explosive barrels, weak supports, bonus targets, chain combos, saved best shots, stronger impacts and quicker reloads.
+Latest complete build: [V3 with fish bowls on the platforms](worm-whiplash-v3/). Three physical bowls per arena, animated goldfish, splash/glass effects and an 800-point base bonus per bowl. Existing Mini Vibe controls; no APK update.
 
-Extract the entire V2 ZIP, close the existing Arcadium server console, run START_INSTALL.cmd and select your existing Arcadium_OS_COMPACT folder. No APK update.
+Extract the entire ZIP, close your Arcadium server console, run START_INSTALL.cmd and select your existing Arcadium_OS_COMPACT folder.
 
-The original V1 download remains in [worm-whiplash](worm-whiplash/). Physical Mini Vibes, exact installed OS, Wi-Fi, six-human balance and recipient antivirus acceptance still require live testing.
+[V2 gameplay video with sound](worm-whiplash-v2/WORM_WHIPLASH_V2_GAMEPLAY.mp4) shows the previous gameplay upgrade; bowls were added in V3. Previous V1/V2 downloads are preserved. Physical devices and recipient antivirus acceptance remain unverified.
